@@ -7,6 +7,9 @@ for each, and live countdowns for timed blocks and pending cooldown lifts.
 This plugin is a **display layer**. It runs `appblock list --json`, parses that
 one document, and renders it.
 
+The command-line tool remains a separate project and has no dependency on this
+plugin. Install [appblock](https://github.com/ArhamTheDeveloper/appblock) first.
+
 ## What it deliberately does not do
 
 The boundary is the point of the plugin, so it is worth stating plainly:
@@ -41,7 +44,17 @@ The boundary is the point of the plugin, so it is worth stating plainly:
 ## Requirements
 
 - Omarchy with the Quickshell shell (`omarchy-shell`).
+- appblock **0.2.0 or newer**, exposing JSON schema 1.
 - `appblock` on `PATH`, or an absolute path to it via the `binary` setting.
+
+## Compatibility
+
+| Plugin release | appblock requirement | JSON schema |
+|---|---|---|
+| `0.1.x` | `>= 0.2.0` | `1` |
+
+The schema is checked on every refresh. An unsupported document is shown as an
+error instead of being interpreted speculatively.
 
 ## Install
 
@@ -71,7 +84,7 @@ Configured from the plugin's settings panel, or per-instance in
 | `binary` | `appblock` | Command or absolute path used to run appblock. |
 | `refreshIntervalSec` | `30` | How often `appblock list --json` is re-read. Range 30–3600. |
 | `showWhenNone` | `false` | Stay in the bar with a `0` count instead of hiding. |
-| `glyph` | `` | Nerd Font glyph shown before the count. |
+| `glyph` | ban icon | Nerd Font glyph shown before the count. |
 
 ## How it refreshes
 
@@ -145,6 +158,9 @@ Validate the manifest against the shell's schema before publishing:
 omarchy plugin validate .
 ```
 
+See [CONTRIBUTING.md](CONTRIBUTING.md) before submitting a change and
+[CHANGELOG.md](CHANGELOG.md) for release notes.
+
 ## Development note
 
 `omarchy plugin enable` / `rescanPlugins` and the shell's "Local plugin changed,
@@ -163,6 +179,8 @@ BarWidget.qml   the bar button, the single poll, the local countdown tick
 Panel.qml       the popup: per-app rows, countdowns, toggle + CLI controls
 Model.js        parsing, validation, countdown and label formatting (pure)
 tests/          node tests for Model.js
+CHANGELOG.md    release history and CLI compatibility
+CONTRIBUTING.md development and validation workflow
 ```
 
 `Model.js` has no QML dependencies, which is what makes it directly testable.
