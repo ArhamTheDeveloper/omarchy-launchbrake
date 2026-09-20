@@ -1,7 +1,7 @@
 # Contributing
 
-This plugin must remain a thin consumer of `appblock list --json`. Do not read
-appblock state files, inspect shims, or duplicate blocking decisions in QML or
+This LaunchBrake plugin must remain a thin consumer of `appblock list --json`.
+Do not read appblock state files, inspect shims, or duplicate blocking decisions in QML or
 JavaScript. Actions should invoke the public CLI and then refresh authoritative
 state.
 

@@ -1,14 +1,15 @@
-# appblock — Omarchy bar widget
+# LaunchBrake — Omarchy bar widget
 
-Live [appblock](https://github.com/ArhamTheDeveloper/appblock) state in the
-Omarchy bar: which apps are blocked right now, appblock's own enforcement label
+Live [LaunchBrake](https://github.com/ArhamTheDeveloper/launchbrake) state in the
+Omarchy bar: which apps are blocked right now, the CLI's own enforcement label
 for each, and live countdowns for timed blocks and pending cooldown lifts.
 
 This plugin is a **display layer**. It runs `appblock list --json`, parses that
 one document, and renders it.
 
 The command-line tool remains a separate project and has no dependency on this
-plugin. Install [appblock](https://github.com/ArhamTheDeveloper/appblock) first.
+plugin. Install [LaunchBrake](https://github.com/ArhamTheDeveloper/launchbrake)
+first; its command remains `appblock`.
 
 ## What it deliberately does not do
 
@@ -59,13 +60,13 @@ error instead of being interpreted speculatively.
 ## Install
 
 ```bash
-omarchy plugin add https://github.com/ArhamTheDeveloper/omarchy-appblock.git --enable --yes
+omarchy plugin add https://github.com/ArhamTheDeveloper/omarchy-launchbrake.git --enable --yes
 ```
 
 Or by hand:
 
 ```bash
-git clone https://github.com/ArhamTheDeveloper/omarchy-appblock.git \
+git clone https://github.com/ArhamTheDeveloper/omarchy-launchbrake.git \
   ~/.config/omarchy/plugins/io.github.arhamthedeveloper.appblock
 omarchy-shell shell rescanPlugins
 omarchy plugin enable io.github.arhamthedeveloper.appblock
@@ -184,6 +185,9 @@ CONTRIBUTING.md development and validation workflow
 ```
 
 `Model.js` has no QML dependencies, which is what makes it directly testable.
+
+The plugin ID remains `io.github.arhamthedeveloper.appblock` for configuration
+and IPC compatibility even though the public project name is LaunchBrake.
 
 ## License
 

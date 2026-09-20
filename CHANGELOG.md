@@ -1,7 +1,12 @@
 # Changelog
 
-All notable changes are documented here. The plugin versions independently from
-the appblock CLI.
+All notable changes are documented here. The LaunchBrake plugin versions
+independently from the `appblock` CLI.
+
+## Unreleased
+
+- Adopted the LaunchBrake public project name while preserving the existing
+  plugin ID and `appblock` command compatibility.
 
 ## 0.1.1
 
