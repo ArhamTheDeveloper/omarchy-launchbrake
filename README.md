@@ -7,6 +7,8 @@ for each, and live countdowns for timed blocks and pending cooldown lifts.
 This plugin is a **display layer**. It runs `appblock list --json`, parses that
 one document, and renders it.
 
+![LaunchBrake widget showing blocked applications and enforcement status](preview.png)
+
 The command-line tool remains a separate project and has no dependency on this
 plugin. Install [LaunchBrake](https://github.com/ArhamTheDeveloper/launchbrake)
 first; its command remains `appblock`.
