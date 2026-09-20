@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "id": "io.github.arhamthedeveloper.appblock",
+  "name": "appblock",
+  "version": "0.1.1",
+  "author": "MuhammadArham",
+  "license": "MIT",
+  "description": "Live appblock state in the Omarchy bar: which apps are blocked, appblock's own enforcement label for each, and live countdowns for timed blocks and pending cooldown lifts. A display layer over `appblock list --json` - it never inspects shim files, blocklist files, or desktop entries.",
+  "kinds": ["bar-widget"],
+  "entryPoints": {
+    "barWidget": "BarWidget.qml"
+  },
+  "barWidget": {
+    "displayName": "appblock",
+    "description": "Shows blocked apps and their countdowns, read from `appblock list --json`",
+    "category": "System",
+    "aliases": ["appblock", "blocked"],
+    "allowMultiple": false,
+    "defaultSection": "right",
+    "defaults": {
+      "binary": "appblock",
+      "refreshIntervalSec": 30,
+      "showWhenNone": false,
+      "glyph": "\uf05e"
+    },
+    "schema": [
+      {
+        "key": "binary",
+        "type": "string",
+        "label": "appblock command",
+        "defaultValue": "appblock",
+        "description": "Command or absolute path used to run appblock. The default resolves `appblock` on PATH."
+      },
+      {
+        "key": "refreshIntervalSec",
+        "type": "integer",
+        "label": "Poll interval (seconds)",
+        "min": 30,
+        "max": 3600,
+        "step": 30,
+        "defaultValue": 30,
+        "description": "How often to re-read `appblock list --json`. Countdowns tick locally in between, so a long interval costs nothing in accuracy."
+      },
+      {
+        "key": "showWhenNone",
+        "type": "boolean",
+        "label": "Stay visible with nothing blocked",
+        "defaultValue": false,
+        "description": "Keep the widget in the bar showing a zero count, instead of hiding itself when nothing is blocked."
+      },
+      {
+        "key": "glyph",
+        "type": "string",
+        "label": "Blocked icon",
+        "defaultValue": "\uf05e",
+        "description": "Nerd Font glyph shown before the blocked count. A warning glyph replaces it automatically when appblock cannot be read."
+      }
+    ]
+  }
+}
