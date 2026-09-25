@@ -47,12 +47,12 @@ The boundary is the point of the plugin, so it is worth stating plainly:
 ## Requirements
 
 - Omarchy with the Quickshell shell (`omarchy-shell`).
-- appblock **0.2.0 or newer**, exposing JSON schema 1.
-- `appblock` on `PATH`, or an absolute path to it via the `binary` setting.
+- **LaunchBrake CLI 0.2.0 or newer**, exposing JSON schema 1.
+- The `appblock` command on `PATH`, or an absolute path to it via the `binary` setting.
 
 ## Compatibility
 
-| Plugin release | appblock requirement | JSON schema |
+| Plugin release | LaunchBrake CLI requirement | JSON schema |
 |---|---|---|
 | `0.1.x` | `>= 0.2.0` | `1` |
 | `0.2.x` | `>= 0.2.0` | `1` |
