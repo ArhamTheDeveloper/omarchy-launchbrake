@@ -18,7 +18,7 @@ import "Model.js" as Model
 // steady-state cost is one short-lived `appblock list --json` per interval.
 BarWidget {
   id: root
-  moduleName: "io.github.arhamthedeveloper.appblock"
+  moduleName: "io.github.arhamthedeveloper.launchbrake"
 
   // --- settings (declared in manifest barWidget.defaults / .schema) --------
 
@@ -318,7 +318,7 @@ BarWidget {
   }
 
   IpcHandler {
-    target: "io.github.arhamthedeveloper.appblock"
+    target: "io.github.arhamthedeveloper.launchbrake"
 
     function open() { root.open() }
     function close() { root.close() }

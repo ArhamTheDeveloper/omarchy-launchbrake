@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "id": "io.github.arhamthedeveloper.appblock",
-  "name": "appblock",
-  "version": "0.1.1",
+  "id": "io.github.arhamthedeveloper.launchbrake",
+  "name": "LaunchBrake",
+  "version": "0.2.0",
   "author": "MuhammadArham",
   "license": "MIT",
   "description": "Live appblock state in the Omarchy bar: which apps are blocked, appblock's own enforcement label for each, and live countdowns for timed blocks and pending cooldown lifts. A display layer over `appblock list --json` - it never inspects shim files, blocklist files, or desktop entries.",
@@ -11,7 +11,7 @@
     "barWidget": "BarWidget.qml"
   },
   "barWidget": {
-    "displayName": "appblock",
+    "displayName": "LaunchBrake",
     "description": "Shows blocked apps and their countdowns, read from `appblock list --json`",
     "category": "System",
     "aliases": ["appblock", "blocked"],

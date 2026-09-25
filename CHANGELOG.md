@@ -3,10 +3,11 @@
 All notable changes are documented here. The LaunchBrake plugin versions
 independently from the `appblock` CLI.
 
-## Unreleased
+## 0.2.0
 
-- Adopted the LaunchBrake public project name while preserving the existing
-  plugin ID and `appblock` command compatibility.
+- Adopted the LaunchBrake public project name and permanent namespaced plugin
+  ID while preserving `appblock` command compatibility.
+- Updated marketplace display metadata and documented safe plugin removal.
 
 ## 0.1.1
 

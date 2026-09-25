@@ -55,6 +55,7 @@ The boundary is the point of the plugin, so it is worth stating plainly:
 | Plugin release | appblock requirement | JSON schema |
 |---|---|---|
 | `0.1.x` | `>= 0.2.0` | `1` |
+| `0.2.x` | `>= 0.2.0` | `1` |
 
 The schema is checked on every refresh. An unsupported document is shown as an
 error instead of being interpreted speculatively.
@@ -62,20 +63,30 @@ error instead of being interpreted speculatively.
 ## Install
 
 ```bash
-omarchy plugin add https://github.com/ArhamTheDeveloper/omarchy-launchbrake.git --enable --yes
+omarchy plugin add https://github.com/ArhamTheDeveloper/omarchy-launchbrake.git --enable
 ```
 
 Or by hand:
 
 ```bash
 git clone https://github.com/ArhamTheDeveloper/omarchy-launchbrake.git \
-  ~/.config/omarchy/plugins/io.github.arhamthedeveloper.appblock
+  ~/.config/omarchy/plugins/io.github.arhamthedeveloper.launchbrake
 omarchy-shell shell rescanPlugins
-omarchy plugin enable io.github.arhamthedeveloper.appblock
+omarchy plugin enable io.github.arhamthedeveloper.launchbrake
 ```
 
 Plugins run as unsandboxed code inside `omarchy-shell`; read the source before
 enabling, as with any plugin.
+
+## Remove
+
+```bash
+omarchy plugin remove io.github.arhamthedeveloper.launchbrake
+```
+
+Removing the plugin deletes its checkout and bar configuration. It does not
+uninstall the separate LaunchBrake CLI or alter its blocked-app state. Remove
+the CLI independently with `appblock uninstall` if you no longer want it.
 
 ## Settings
 
@@ -142,7 +153,7 @@ The widget fails visibly rather than showing something stale or wrong:
 | Scroll | Re-read appblock state |
 | Panel row button | `appblock unblock <id>` (schedules the lift behind the cooldown) |
 | Panel terminal button | Open a terminal running `appblock list`, then hand over an interactive shell |
-| IPC | `omarchy-shell io.github.arhamthedeveloper.appblock cli` does the same |
+| IPC | `omarchy-shell io.github.arhamthedeveloper.launchbrake cli` does the same |
 
 ## Tests
 
@@ -188,8 +199,14 @@ CONTRIBUTING.md development and validation workflow
 
 `Model.js` has no QML dependencies, which is what makes it directly testable.
 
-The plugin ID remains `io.github.arhamthedeveloper.appblock` for configuration
-and IPC compatibility even though the public project name is LaunchBrake.
+The permanent marketplace/plugin ID is
+`io.github.arhamthedeveloper.launchbrake`.
+
+## Development disclosure
+
+LaunchBrake was conceived, specified, tested, and maintained by Muhammad Arham.
+Its implementation was produced with substantial assistance from AI coding
+tools under human direction and review.
 
 ## License
 

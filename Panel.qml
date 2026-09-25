@@ -15,7 +15,7 @@ import "Model.js" as Model
 // `list --json` document.
 Panel {
   id: root
-  moduleName: "io.github.arhamthedeveloper.appblock"
+  moduleName: "io.github.arhamthedeveloper.launchbrake"
   manageIpc: false
 
   property var anchorItem: null
