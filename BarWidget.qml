@@ -34,7 +34,7 @@ BarWidget {
     return Math.max(Model.MIN_REFRESH_SEC, Math.min(Model.MAX_REFRESH_SEC, Math.round(n)))
   }
 
-  readonly property bool showWhenNone: root.setting("showWhenNone", false) === true
+  readonly property bool showWhenNone: root.setting("showWhenNone", true) === true
 
   readonly property string blockedGlyph: {
     var g = root.setting("glyph", "\uf05e")

@@ -24,6 +24,8 @@ function load(name) {
 }
 
 const M = load("Model.js");
+const MANIFEST = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "manifest.json"), "utf8"));
+const BAR_WIDGET = fs.readFileSync(path.join(__dirname, "..", "BarWidget.qml"), "utf8");
 
 let pass = 0;
 let fail = 0;
@@ -32,6 +34,20 @@ function ok(name, cond) {
   else { fail++; console.log("FAIL " + name); }
 }
 function section(title) { console.log("\n# " + title); }
+
+// --- first-run discoverability --------------------------------------------
+
+section("first-run discoverability");
+
+{
+  const showSetting = MANIFEST.barWidget.schema.find((setting) => setting.key === "showWhenNone");
+  ok("manifest keeps an empty widget visible by default",
+    MANIFEST.barWidget.defaults.showWhenNone === true);
+  ok("settings schema advertises the same visible default",
+    showSetting !== undefined && showSetting.defaultValue === true);
+  ok("QML fallback agrees when no saved setting exists",
+    /setting\("showWhenNone",\s*true\)/.test(BAR_WIDGET));
+}
 
 // A document shaped exactly like this machine's live `appblock list --json`.
 const LIVE = JSON.stringify({

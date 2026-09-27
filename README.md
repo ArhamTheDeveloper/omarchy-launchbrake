@@ -97,7 +97,7 @@ Configured from the plugin's settings panel, or per-instance in
 |---|---|---|
 | `binary` | `appblock` | Command or absolute path used to run appblock. |
 | `refreshIntervalSec` | `30` | How often `appblock list --json` is re-read. Range 30–3600. |
-| `showWhenNone` | `false` | Stay in the bar with a `0` count instead of hiding. |
+| `showWhenNone` | `true` | Stay visible with a `0` count so a fresh installation is easy to find. Disable it to hide the widget when nothing is blocked. |
 | `glyph` | ban icon | Nerd Font glyph shown before the count. |
 
 ## How it refreshes

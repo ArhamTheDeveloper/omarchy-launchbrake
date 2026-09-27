@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "io.github.arhamthedeveloper.launchbrake",
   "name": "LaunchBrake",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "author": "MuhammadArham",
   "license": "MIT",
   "description": "Live appblock state in the Omarchy bar: which apps are blocked, appblock's own enforcement label for each, and live countdowns for timed blocks and pending cooldown lifts. A display layer over `appblock list --json` - it never inspects shim files, blocklist files, or desktop entries.",
@@ -20,7 +20,7 @@
     "defaults": {
       "binary": "appblock",
       "refreshIntervalSec": 30,
-      "showWhenNone": false,
+      "showWhenNone": true,
       "glyph": "\uf05e"
     },
     "schema": [
@@ -44,9 +44,9 @@
       {
         "key": "showWhenNone",
         "type": "boolean",
-        "label": "Stay visible with nothing blocked",
-        "defaultValue": false,
-        "description": "Keep the widget in the bar showing a zero count, instead of hiding itself when nothing is blocked."
+        "label": "Show when no apps are blocked",
+        "defaultValue": true,
+        "description": "Keep the widget visible with a zero count so a fresh installation is discoverable. Disable this to hide it when nothing is blocked."
       },
       {
         "key": "glyph",
